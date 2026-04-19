@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #FAFAF9;
+  --color-foreground: #1C1917;
+  --color-accent-teal: #0D9488;
+  --color-accent-green: #65A30D;
+  --color-accent-blue: #0284C7;
+  
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui;
+  --font-heading: var(--font-sora), ui-sans-serif, system-ui;
+}
+
+:root {
+  --background: #FAFAF9;
+  --foreground: #1C1917;
+  --accent-teal: #0D9488;
+  --accent-blue: #0284C7;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #FAFAF9;
+    --foreground: #1C1917;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  cursor: none; /* Custom cursor */
+}
+
+/* Base custom text selection */
+::selection {
+  background: rgba(13, 148, 136, 0.2);
+  color: var(--foreground);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 40px -10px rgba(0,0,0,0.05);
+}
+
+.text-gradient {
+  background: linear-gradient(to right, var(--accent-teal), var(--accent-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+/* Custom scrollbar for better aesthetics */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.1);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0,0,0,0.2);
+}
